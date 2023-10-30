@@ -16,7 +16,7 @@ LSTAT = st.number_input('input LSTAT')
 
     
 prediksi=''
-if st.button('Prediksi Peluang Masuk Pendidikan Tinggi'):
+if st.button('Prediksi Harga Rumah Boston'):
     prediksi_boston = model.predict([[INDUS, CHAS,	NOX,	RM,	AGE,	TAX,	LSTAT]])
     prediksi=prediksi_boston
 
