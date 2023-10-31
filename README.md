@@ -181,7 +181,7 @@ Hasil yang didapatkan adalah 74%
 
 ## Deployment
 
-https://github.com/auliamarshanda12/AuliaMarshanda12
+https://github.com/auliamarshanda12/AuliaMarshanda12<br>
 https://auliamarshanda12-isnltufusczhtytsvdxx33.streamlit.app/
 
 
