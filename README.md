@@ -1,7 +1,7 @@
-Laporan Proyek Machine Learning
-Nama : Aulia Marshanda
-Nim : 211351034
-Kelas : Pagi B
+ # Laporan Proyek Machine Learning
+### Nama : Aulia Marshanda
+### Nim : 211351034
+### Kelas : Pagi B
 
 ## Domain Proyek
 
@@ -41,7 +41,8 @@ Kaggle : [Boston House Prices] (https://www.kaggle.com/datasets/vikrishnan/bosto
 - NOX     : menunjukan Konsentrasi nitrogen oksida (NOX) di udara.[Tipe Data : Float]
 - RM      : menunjukan Rata-rata jumlah kamar per hunian.[Tipe Data : Float]
 - AGE     : menunjukan Persentase hunian yang dimiliki sebelum tahun 1940.[Tipe Data : Float]
-- DIS     : menunjukan Jarak terbobot dari lima pusat kerja di Boston. RAD: Indeks aksesibilitas jalan raya.[Tipe Data : Float]
+- DIS     : menunjukan Jarak terbobot dari lima pusat kerja di Boston.
+RAD: Indeks aksesibilitas jalan raya.[Tipe Data : Float]
 - RAD     : manunjukan Indeks aksesibilitas jalan raya.[Tipe Data : Integer]
 - TAX     : menunjukan Tarif pajak properti.[Tipe Data : Float]
 - PTRATIO : menunjukan Rasio murid-guru di distrik sekolah.[Tipe Data : Float]      
@@ -60,29 +61,41 @@ Untuk data collection ini, saya mendapatkan dataset yang nantinya digunakan dari
 Untuk bagian ini, kita akan menggunakan teknik EDA.
 Pertama kita mengimport semua library yang dibutuhkan,
 
-
+``` bash
 import pandas as pd 
 import matplotlib.pyplot as plt 
 import numpy as np
 import seaborn as sns
+```
+
 
 Karena kita menggunakan vscode untuk mengerjakan maka file lokal harus berada di direktori yang sama,
 
+``` bash
 df = pd.read_csv('boston.csv')
 df.head()
+```
 
 Lalu tipe data dari masing-masing kolom, kita bisa menggunakan properti info,
 
+``` bash
 df.info()
+```
 
 Selanjutnya kita akan memeriksa apakah dataset tersebut terdapat baris yang kosong atau null dengan menggunakan seaborn,
 
+``` bash
 sns.heatmap(df.isnull())
+```
+![Alt text](image-2.png)
 
 Selanjutnya mari kita lanjutkan dengan data exploration,
 
+``` bash
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(), annot=True)
+```
+![Alt text](image-3.png)
 
 ## Modeling
 
@@ -90,37 +103,49 @@ Model regresi linier adalah pendekatan statistik yang digunakan untuk memodelkan
 
 - Sebelumnya mari kita import library yang nanti akan digunakan,
 
+``` bash
 from sklearn.model_selection 
 from sklearn.linear_model
+```
 
 - Langkah pertama adalah memasukan kolom-kolom fitur yang ada di datasets dan juga kolom targetnya,
 
+``` bash
 column_names = ['CRIM', 'ZN', 'INDUS', 'CHAS', 'NOX', 'RM', 'AGE', 'DIS', 'RAD', 'TAX', 'PTRATIO', 'B - 1000', 'LSTAT', 'MEDV']
 df = pd.read_csv('boston.csv', header=None, delimiter=r"\s+", names=column_names)
 df.head()
-        
+```     
 
 - Pembagian X dan Y menjadi train dan testnya masing-masing,
 
+``` bash
 X_train, X_test, y_train, y_test = train_test_split( X, y, test_size=0.33, random_state=42)
+``` 
 
 - Mari kita lanjut dengan membuat model,
 
+``` bash
 model = LinearRegression()
+``` 
 
 - Mari lanjut, memasukkan x_train dan y_train pada model dan memasukan X_train_pred,
 
+``` bash
 model.fit(X_train, y_train)
 
 y_pred = model.predict(X_train)
+``` 
 
 - Sekarang kita bisa melihat score dari model kita,
 
+``` bash
 score = model.score(X_train, y_train)
 score
+``` 
 
 - Akurasi modelnya yaitu 74%, selanjutnya mari kita test menggunakan sebuah array value, 
 
+``` bash
 input_data = (2.31, 0, 0.430483, 6.575, 4.192680, 5.693732, 1.788421)
 input_data_np = np.array(input_data)
 input_data_reshape = input_data_np.reshape(1,-1)
@@ -129,13 +154,16 @@ std_data = scaler.transform(input_data_reshape)
 
 prediksi = model.predict(input_data_reshape)
 print(prediksi)
+```
 
 - Sekarang modelnya sudah selesai, mari kita export sebagai file sav agar nanti bisa kita gunakan pada project web streamlit kita,
 
+``` bash
 import pickle
 
 filename = 'PrediksiBoston3.sav'
 pickle.dump(model, open(filename, 'wb'))
+```
 
 ## Evaluation
 
@@ -143,8 +171,11 @@ Metrik yang digunakan yaitu metrik evaluasi, menggunakan R2 Score.
 R2 Score atau juga dikenal sebagai koefisien determinasi, adalah metrik evaluasi umum yang digunakan dalam regresi untuk mengukur sejauh mana model berhasil menjelaskan variasi dalam data. Skor ini memberikan informasi tentang persentase variasi
 
 #Library evaluasi
+
+``` bash
 from sklearn.metrics import r2_score
 r2_score(y_train, y_pred)
+```
 
 Hasil yang didapatkan adalah 74%
 
