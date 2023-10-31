@@ -1,7 +1,7 @@
- # Laporan Proyek Machine Learning
-### Nama : Aulia Marshanda
-### Nim : 211351034
-### Kelas : Pagi B
+Laporan Proyek Machine Learning
+Nama : Aulia Marshanda
+Nim : 211351034
+Kelas : Pagi B
 
 ## Domain Proyek
 
@@ -41,8 +41,7 @@ Kaggle : [Boston House Prices] (https://www.kaggle.com/datasets/vikrishnan/bosto
 - NOX     : menunjukan Konsentrasi nitrogen oksida (NOX) di udara.[Tipe Data : Float]
 - RM      : menunjukan Rata-rata jumlah kamar per hunian.[Tipe Data : Float]
 - AGE     : menunjukan Persentase hunian yang dimiliki sebelum tahun 1940.[Tipe Data : Float]
-- DIS     : menunjukan Jarak terbobot dari lima pusat kerja di Boston.
-RAD: Indeks aksesibilitas jalan raya.[Tipe Data : Float]
+- DIS     : menunjukan Jarak terbobot dari lima pusat kerja di Boston. RAD: Indeks aksesibilitas jalan raya.[Tipe Data : Float]
 - RAD     : manunjukan Indeks aksesibilitas jalan raya.[Tipe Data : Integer]
 - TAX     : menunjukan Tarif pajak properti.[Tipe Data : Float]
 - PTRATIO : menunjukan Rasio murid-guru di distrik sekolah.[Tipe Data : Float]      
@@ -60,6 +59,7 @@ Untuk data collection ini, saya mendapatkan dataset yang nantinya digunakan dari
 
 Untuk bagian ini, kita akan menggunakan teknik EDA.
 Pertama kita mengimport semua library yang dibutuhkan,
+
 
 import pandas as pd 
 import matplotlib.pyplot as plt 
