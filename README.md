@@ -87,7 +87,7 @@ Selanjutnya kita akan memeriksa apakah dataset tersebut terdapat baris yang koso
 ``` bash
 sns.heatmap(df.isnull())
 ```
-![Alt text](image-2.png)
+![image](https://github.com/auliamarshanda12/AuliaMarshanda12/assets/148952831/a22db161-ae4e-46dd-aebf-c67478416885)
 
 Selanjutnya mari kita lanjutkan dengan data exploration,
 
@@ -95,7 +95,7 @@ Selanjutnya mari kita lanjutkan dengan data exploration,
 plt.figure(figsize=(10,8))
 sns.heatmap(df.corr(), annot=True)
 ```
-![Alt text](image-3.png)
+![image](https://github.com/auliamarshanda12/AuliaMarshanda12/assets/148952831/ea3b7d82-7f86-4744-9ffb-d0cc0f448b24)
 
 ## Modeling
 
